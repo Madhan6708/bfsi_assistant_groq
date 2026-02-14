@@ -1,0 +1,41 @@
+import json
+import os
+
+os.makedirs("data", exist_ok=True)
+
+intents = [
+    ("Loan eligibility guidance", "Am I eligible for a personal loan?",
+     "Eligibility depends on income, credit score, employment status, and existing liabilities. Please contact your bank for precise assessment."),
+    ("Loan application status", "What is the status of my loan application?",
+     "You can check your application status via the bank’s app/portal or by contacting customer support with your reference number."),
+    ("EMI calculation", "How is EMI calculated?",
+     "EMI depends on the loan amount, interest rate, and tenure. Banks use a standard formula to compute monthly installments."),
+    ("EMI schedule", "Can I get my EMI repayment schedule?",
+     "Your EMI schedule is available in your loan agreement or through the bank’s official channels."),
+    ("Interest rate information", "What is the interest rate for home loans?",
+     "Interest rates vary by bank and customer profile. Please refer to official bank channels for current rates."),
+    ("Payment support", "My EMI payment failed. What should I do?",
+     "Please verify your payment method and sufficient balance. Contact customer support if the issue persists."),
+    ("Duplicate charge support", "I was charged twice for my EMI. What should I do?",
+     "Report the duplicate transaction to customer support with transaction details for investigation."),
+    ("Account update", "How do I update my contact details?",
+     "Update your contact details via the bank’s official app/website or by visiting a branch."),
+    ("KYC update", "How can I complete or update my KYC?",
+     "You can complete or update KYC through the bank’s official digital channels or by visiting a branch."),
+    ("Loan closure", "How do I close my loan after repayment?",
+     "After full repayment, request a loan closure confirmation and no-dues certificate from your bank.")
+]
+
+data = []
+for i in range(150):
+    inst, inp, out = intents[i % len(intents)]
+    data.append({
+        "instruction": inst,
+        "input": f"{inp} (variant {i+1})",
+        "output": out
+    })
+
+with open("data/v1_dataset_150.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+
+print("✅ Created data/v1_dataset_150.json with 150 entries")

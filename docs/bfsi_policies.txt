@@ -1,0 +1,12 @@
+EMI Calculation:
+EMI = [P x R x (1+R)^N] / [(1+R)^N – 1]
+Where:
+P = Principal loan amount
+R = Monthly interest rate
+N = Number of monthly installments
+
+Prepayment Rules:
+Some banks allow prepayment with minimal charges. Charges vary by loan type and bank policy.
+
+Late Payment Penalties:
+Late EMI payments may attract penalty fees and impact credit score. Exact penalty rates depend on bank policy.
