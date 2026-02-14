@@ -20,3 +20,10 @@ Python, sentence-transformers, ChromaDB, Groq API, LangChain loaders
 1. Install:
    ```bash
    pip install -r requirements.txt
+2. Set API key:
+   ```bash
+setx GROQ_API_KEY "your_key"
+
+3.Run:
+   ```bash
+python src/bfsi_assistant_groq.py
